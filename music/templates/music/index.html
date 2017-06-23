@@ -1,0 +1,22 @@
+{% if all_albums %}
+
+{#   If we have at least one template #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Albums</h1>
+<ul>
+    {% for album in all_albums %}
+    <li><a href = "{% url 'music:detail' album.id %}">{{ album.album_title }}</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>
+
+{% else %}
+    <h3>You don't have any albums!</h3>
+{% endif %}
