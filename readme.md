@@ -8,4 +8,4 @@ python manage.py migrate
 After defining new models! Creates SQL files for the 
 models and allocates columns 
 
-On video 24! 
+On video 25! 

@@ -21,4 +21,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^music/', include('music.urls')), # goes to music/urls.py to handle the route.
+    url(r'^', include('music.urls')),
+
 ]
