@@ -23,6 +23,3 @@ class Song(models.Model): # songs need to be a part of an album.
 
     def __str__(self):
         return self.song_title
-
-
-
