@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 # Create your models here. Blueprint for database- how are we sorting data for our app?
 class Album(models.Model): # all classes have to inherit from this
@@ -6,6 +7,9 @@ class Album(models.Model): # all classes have to inherit from this
     album_title = models.CharField(max_length=500)
     genre = models.CharField(max_length=100)
     album_logo = models.CharField(max_length=1000)
+
+    def get_absolute_url(self):
+        return reverse('music:detail', kwargs = {'pk' : self.pk})
 
     def __str__(self): # gives string representation of the object!
         return self.album_title + ' - ' + self.artist
