@@ -5,7 +5,8 @@ python manage.py migrate
 
 
 ````
-After defining new models! Creates SQL files for the 
-models and allocates columns 
+After defining new models! Creates SQL files for the
+models and allocates columns
 
-On video 25! 
+When making forms for models:
+<model_name>_form.html. Then just create the route and the view! 

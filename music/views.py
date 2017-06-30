@@ -1,5 +1,5 @@
 from django.views import generic
-from .models import Album
+from .models import Album, Song
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login # takes user and password and verifies login, gives session ID
@@ -24,9 +24,15 @@ class AlbumCreate(CreateView):
     # attributes we need from the user
     fields = ['artist', 'album_title', 'genre', 'album_logo']
 
+class SongCreate(CreateView):
+    model = Song
+    # attributes we need from the user
+    fields = ['album', 'file_type', 'song_title']
+
 class AlbumUpdate(UpdateView):
     model = Album
     fields = ['artist', 'album_title', 'genre', 'album_logo']
+
 
 class AlbumDelete(DeleteView):
     model = Album

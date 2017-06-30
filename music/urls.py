@@ -14,4 +14,6 @@ urlpatterns = [
     url(r'album/(?P<pk>[0-9]+)/delete/$', views.AlbumDelete.as_view(), name = 'album-delete'),
     # register
     url(r'^register/$', views.UserFormView.as_view(), name = 'register'),
+
+    url(r'song/add/$', views.SongCreate.as_view(), name = "song-add"),
 ]

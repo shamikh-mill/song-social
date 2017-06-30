@@ -1,5 +1,5 @@
 {% extends 'music/base.html' %}
-{% block title %} Song Details {% endblock %}
+{% block title %} Album Details {% endblock %}
 {% block body %}
 
     <img src = "{{ album.album_logo.url }}" style = "max-width: 250px; max-height: 250px">
@@ -13,6 +13,7 @@
     {% endfor %}
 </ul>
 
+<a href = {% url 'music:song-add' %}>Add Song</a>
 
 
 

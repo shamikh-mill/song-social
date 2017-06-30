@@ -1,5 +1,6 @@
 {% extends 'music/base.html' %}
-{% block title %} Register for Viber {% endblock %}
+{% block title %} Add New Song {% endblock %}
+{% block albums_active %}active{% endblock %}
 
 {% block body %}
 <div class="container-fluid">
@@ -9,7 +10,7 @@
         <div class="col-sm-12 col-md-7">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3>Sign in or Create a New Account</h3>
+                    <h3>Add a New Song</h3>
                     {% if error_message %}
                         <p><strong>{{ error_message }}</strong></p>
                     {% endif %}
@@ -18,7 +19,7 @@
                         {% include 'music/form_template.html' %}
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-success">Register/Log in</button>
+                                <button type="submit" class="btn btn-success">Add Song</button>
                             </div>
                         </div>
                     </form>
