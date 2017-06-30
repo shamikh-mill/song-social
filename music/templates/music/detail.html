@@ -2,9 +2,10 @@
 {% block title %} Song Details {% endblock %}
 {% block body %}
 
-    <img src = "{{ album.album_logo }}">
+    <img src = "{{ album.album_logo.url }}" style = "max-width: 250px; max-height: 250px">
     <h1>{{ album.album_title }}</h1>
     <h2> {{ album.artist }} </h2>
+
 
 <ul>
     {% for song in album.song_set.all %}

@@ -1,11 +1,16 @@
 {% extends 'music/base.html' %}
 {% block body %}
 
-    <h1>Albums</h1>
-    <ul>
         {% for album in all_albums %}
         {#listview stores everything in object_list, which we renamed. #}
-        <li><a href = "{% url 'music:detail' album.id %}">{{ album.album_title }}</a></li>
+        <div class = 'col-sm-4 col-lg-2'>
+
+          <a href = "{% url 'music:detail' album.id %}">
+            <img src = "{{ album.album_logo.url }}" class = "img-responsive">
+           </a>
+
+        <a href = "{% url 'music:detail' album.id %}">{{ album.album_title }}</a>
+
 
         <!-- Delete Button -->
         <form action = "{% url 'music:album-delete' album.id %}" method = 'post' style = "display: inline;">
@@ -24,7 +29,8 @@
         <span class = "glyphicon glyphicon-edit"></span>
       </button>
     </form>
+    </div>
         {% endfor %}
-    </ul>
+
 
 {%  endblock %}

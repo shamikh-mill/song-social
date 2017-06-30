@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 # look at URL requested and perform a functionality. Table of contents for application.
 
@@ -24,3 +26,7 @@ urlpatterns = [
     url(r'^', include('music.urls')),
 
 ]
+
+if settings.DEBUG: # when in developer mode, use these
+    urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
